@@ -18,6 +18,7 @@ body {
     height: 100%;
 }
 
+
 .container {
     min-height: 100%;
     display: flex;
@@ -54,8 +55,8 @@ body {
     height: 80px;
     font-weight: 600;
     margin-bottom: 15px;
-    color: #406a8f;
-    text-shadow: -1px -1px 8px black;
+    color: #daeeff;
+    text-shadow: -1px -1px 20px black;
 }
 
 .date {
@@ -63,8 +64,8 @@ body {
     flex-direction: row;
     font-size: 60px;
     height: 80px;
-    color: #406a8f;
-    text-shadow: -1px -1px 8px black;
+    color: #c2e1fd;
+    text-shadow: -1px -1px 14px black;
 }
 
 .day {
@@ -73,8 +74,8 @@ body {
     font-size: 60px;
     height: 80px;
     margin-bottom: 15px;
-    color: #406a8f;
-    text-shadow: -1px -1px 8px black;
+    color: #cee7fd;
+    text-shadow: -1px -1px 20px black;
 }
 
 .time-container {
@@ -110,6 +111,23 @@ body {
 
 .strelki {
 font-weight: 600;
+}
+
+.location {
+    font-size: 35px;
+    color: aliceblue;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.location:hover {
+    color: rgb(208, 208, 106);
+}
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main {
