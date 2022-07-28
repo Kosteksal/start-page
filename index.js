@@ -29,7 +29,7 @@ var date = new Date(),
 setInterval(clock, 1000);
 
 async function getData() {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?id=${locArr[loc]}&lang=ru&appid=d80709219b6c9b44b56a4efb56630966`).then(function (resp) {return resp.json() }).then(function (data) {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?id=${locArr[loc]}&lang=ru&appid=d80709219b6c9b44b56a4efb56630966`).then(function (resp) {return resp.json() }).then(function (data) {
     document.querySelector('.city').textContent = data.name;
     document.querySelector('.forecast').innerHTML = Math.round(data.main.temp - 273) + '&deg;';
     document.querySelector('.desc').textContent = data.weather[0]['description'];
