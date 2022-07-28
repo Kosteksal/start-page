@@ -5,6 +5,7 @@ const daay = document.querySelector('.day');
 const bg = document.querySelector('body');
 const locat = document.querySelector('.location');
 const weatherLink = document.querySelector('.weather');
+const autoBG = document.querySelector('.autobg');
 
 const dayArr = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 
@@ -74,7 +75,10 @@ let bgNum = 0;
 function setLocalStorage() {
     localStorage.setItem('bg', bgNum);
     localStorage.setItem('loc', loc);
+    localStorage.setItem('slide', autoBG.checked);
   };
+
+  let slideCheck;
 
   function getLocalStorage() {
     bgNum = localStorage.getItem('bg');
@@ -85,7 +89,17 @@ function setLocalStorage() {
     if (loc == null) {loc = 0};
     getData();
     weatherLink.href = `https://openweathermap.org/city/${locArr[loc]}`;
+
+    slideCheck = localStorage.getItem('slide');
+    console.log(slideCheck);
+    
+    if (slideCheck == 'true') {
+        autoBG.checked = true;
+        autoBack();
+    }
+    
   };
+
 
   window.addEventListener('beforeunload', setLocalStorage);
 
@@ -101,4 +115,25 @@ function setLocalStorage() {
     getData();
     weatherLink.href = `https://openweathermap.org/city/${locArr[loc]}`;
     
+  }
+
+  let slideID;
+
+  autoBG.addEventListener('click', autoBack);
+
+  function autoBack () {
+      if (autoBG.checked == 0) {
+       clearInterval(slideID);
+      };
+
+      if (autoBG.checked == 1) {
+       slideID = setInterval(slideShow, 6000);
+      }
+
+  }
+
+  
+
+  function slideShow () {
+      moveR();
   }
