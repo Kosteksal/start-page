@@ -97,7 +97,6 @@ function setLocalStorage() {
         autoBG.checked = true;
         autoBack();
     }
-    
   };
 
 
