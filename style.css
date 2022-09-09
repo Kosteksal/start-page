@@ -151,6 +151,49 @@ main {
     color: rgb(208, 208, 106);
 }
 
+.finder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.find-line {
+    height: 50px;
+    width: 500px;
+    font-size: 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: #445f94cf;
+    color: white;
+}
+
+.find-line:focus {
+    border-color: #bdbdbd;
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+
+}
+
+.find-line::placeholder {
+    color: rgb(147, 147, 147);
+}
+
+.find-btn {
+    height: 50px;
+    width: 50px;
+    font-size: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.find-btn:hover {
+    font-size: 42px;
+}
+
+
+
+
 .footer-list-img {
     height: 50px;
     transition: 0.4s;

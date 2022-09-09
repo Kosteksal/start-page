@@ -6,6 +6,8 @@ const bg = document.querySelector('body');
 const locat = document.querySelector('.location');
 const weatherLink = document.querySelector('.weather');
 const autoBG = document.querySelector('.autobg');
+const findBtn = document.querySelector('.find-btn');
+const input = document.querySelector('.find-line');
 
 const dayArr = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 
@@ -136,3 +138,29 @@ function setLocalStorage() {
   function slideShow () {
       moveR();
   }
+
+
+
+  findBtn.addEventListener('click', finder);
+
+  function finder () {
+      let search = input.value;
+      let searchParse = search.replace(/ /g, '+');
+      console.log(searchParse);
+      //window.open(`https://yandex.ru/search/?text=${searchParse}&lr=2&src=suggest_T`);
+      window.location.href = `https://yandex.ru/search/?text=${searchParse}&lr=2&src=suggest_T`;
+  }
+
+
+  input.addEventListener("keydown", (ev) => {
+    if (ev.keyCode === 13) {
+      if (input.value.length == 0) {
+      } else {
+        let search = input.value;
+        let searchParse = search.replace(/ /g, '+');
+        console.log(searchParse);
+        //window.open(`https://yandex.ru/search/?text=${searchParse}&lr=2&src=suggest_T`);
+        window.location.href = `https://yandex.ru/search/?text=${searchParse}&lr=2&src=suggest_T`;
+      }
+    }
+  });
