@@ -160,18 +160,20 @@ main {
 
 .find-line {
     height: 50px;
-    width: 500px;
+    width: 1000px;
     font-size: 30px;
     border: none;
-    border-radius: 20px;
+    border-radius: 15px 5px 50px 10px;
     background-color: #445f94cf;
     color: white;
+    transition: 0.3s;
 }
 
 .find-line:focus {
-    border-color: #bdbdbd;
-    color: white;
-    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+    border: none;
+    box-shadow: 3px 7px 19px 1px yellowgreen;
+
+    outline: 1px solid transparent;
 
 }
 
@@ -180,7 +182,7 @@ main {
 }
 
 .find-btn {
-    height: 50px;
+    height: 55px;
     width: 50px;
     font-size: 40px;
     cursor: pointer;
